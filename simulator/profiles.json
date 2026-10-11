@@ -1,0 +1,26 @@
+{
+  "fast": {
+    "chunk_size": 4096,
+    "delay_between_files": 0.04,
+    "jitter": 0.02,
+    "touch_canary": false
+  },
+  "slow-and-low": {
+    "chunk_size": 1024,
+    "delay_between_files": 0.5,
+    "jitter": 0.1,
+    "touch_canary": false
+  },
+  "canary-touching": {
+    "chunk_size": 4096,
+    "delay_between_files": 0.1,
+    "jitter": 0.05,
+    "touch_canary": true
+  },
+  "stealth": {
+    "chunk_size": 1024,
+    "delay_between_files": 2.0,
+    "jitter": 0.5,
+    "touch_canary": false
+  }
+}
