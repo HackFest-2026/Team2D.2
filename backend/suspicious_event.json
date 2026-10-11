@@ -1,0 +1,15 @@
+﻿[
+  {
+    "timestamp": "2026-10-10T14:00:00",
+    "pid": 54322,
+    "create_time": 1791630000.0,
+    "process_name": "suspicious_test.exe",
+    "cmdline": ["suspicious_test.exe", "--test"],
+    "metrics": {
+      "io_write_bytes_delta": 5000,
+      "write_entropy_avg": 8.5,
+      "canary_touched": true,
+      "watchdog_rename_events": 5
+    }
+  }
+]

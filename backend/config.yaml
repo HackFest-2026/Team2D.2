@@ -1,0 +1,59 @@
+# ─── Rule-engine scoring weights (0–50 total) ───
+scoring:
+  # Renames: linear ramp from 0 to max_points over [0, saturate_at]
+  renames:
+    max_points: 10
+    saturate_at: 100     # renames in a 5-second window
+  # Extension-change ratio: points = ratio * max_points
+  extension_change:
+    max_points: 15
+  # Write rate (bytes/sec): linear ramp
+  write_rate:
+    max_points: 10
+    saturate_at: 100000  # 100 KB/s
+  # Shannon entropy of written data (0–8 bits/byte)
+  # Capped at 15 pts; alone it can never push score past 15
+  entropy:
+    max_points: 14
+    threshold: 6.0       # below this = 0 contribution
+    saturate_at: 7.9     # at or above = full max_points
+  # Flat bonus for script-host / unknown process names
+  script_host_bonus: 10
+  script_host_names:
+    - python
+    - python3
+    - python.exe
+    - pythonw.exe
+    - powershell
+    - powershell.exe
+    - pwsh
+    - pwsh.exe
+    - wscript
+    - wscript.exe
+    - cscript
+    - cscript.exe
+    - cmd
+    - cmd.exe
+    - node
+    - node.exe
+
+  # Combo bonus
+  ransomware_combo:
+    bonus: 45
+    min_renames: 5
+    min_ext_ratio: 0.5
+    min_entropy: 7.0
+
+  # Canary touch floors score at this value
+  canary_floor: 95
+
+  # ── IsolationForest stub contribution (0–30) ──
+  isolation_forest_max: 30
+  # Set to true once the model is trained to enable it
+  isolation_forest_enabled: false
+
+# ─── Tier thresholds ───
+tiers:
+  alert: 40
+  suspend: 70
+  terminate: 90

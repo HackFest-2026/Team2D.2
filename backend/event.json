@@ -1,0 +1,15 @@
+[
+  {
+    "timestamp": "2026-10-08T22:50:00",
+    "pid": 54321,
+    "create_time": 1728405900.0,
+    "process_name": "calm.exe",
+    "cmdline": ["calm.exe", "--normal"],
+    "metrics": {
+      "io_write_bytes_delta": 100,
+      "write_entropy_avg": 3.5,
+      "canary_touched": false,
+      "watchdog_rename_events": 0
+    }
+  }
+]
