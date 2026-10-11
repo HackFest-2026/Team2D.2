@@ -1,0 +1,11 @@
+backend_url: "http://127.0.0.1:8000"
+sandbox_path: "../sandbox"
+vault_path: "../vault"
+write_bytes_threshold: 1000
+exclude_names: ["docker.exe", "com.docker.backend.exe", "wsl.exe", "wslhost.exe", "vmmem.exe", "oracle.exe", "language_server_windows_x64.exe", "svchost.exe", "MsMpEng.exe", "SearchIndexer.exe", "System", "Registry", "Antigravity.exe", "Code.exe", "chrome.exe", "msedge.exe", "docker", "com.docker.backend", "wsl", "wslhost", "vmmem", "oracle", "language_server_windows_x64", "svchost", "MsMpEng", "SearchIndexer", "Antigravity", "Code", "chrome", "msedge", "OneDrive.exe", "ms-teams.exe", "msedgewebview2.exe", "CrossDeviceService.exe", "ChatGPT Classic.exe"]
+exclude_cmdlines: ["uvicorn"]
+never_act_names: ["OneDrive.exe", "MsMpEng.exe", "SearchIndexer.exe", "SearchProtocolHost.exe", "svchost.exe", "explorer.exe", "dwm.exe", "Dropbox.exe", "GoogleDriveFS.exe"]
+never_act_paths: ["c:\\windows\\", "c:\\program files\\", "c:\\program files (x86)\\", "c:\\program files\\windowsapps\\"]
+
+api_token: "hackfest-super-secret-token"
+
